@@ -1,8 +1,11 @@
 require('./models/db');
+
 const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
 const studentsController = require("./controllers/studentsController");
+const Handlebars = require('handlebars');
+const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access');
 
 
 const app = express();
@@ -15,7 +18,8 @@ app.set("views",path.join(__dirname,"views"));
 app.engine("hbs",exphbs({
     extname: "hbs",
     defaultLayout: "mainlayout",
-    lauoutDir: __dirname + "/viwes/layouts"
+    lauoutDir: __dirname + "/viwes/layouts",
+    handlebars: allowInsecurePrototypeAccess(Handlebars)
 }))
 app.set("view engine", "hbs");
 
