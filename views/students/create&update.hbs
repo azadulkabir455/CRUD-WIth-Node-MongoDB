@@ -1,6 +1,7 @@
 <h3>{{viewTitle}}</h3>
 
-<form action="/" method="post" autocomplete="off">
+<form action="/" method="post">
+<input type="hidden" name="_id" value="{{student._id}}">
     <div class="form-group">
         <label for="name">Full Name :</label>
         <input type="text" class="form-control" name="name" placeholder="Write your Full Name" />
@@ -21,6 +22,6 @@
     </div>
       <div class="from-group">
         <button type="submit" class="btn btn-info"><i class="fas fa-database"></i> Submit</button>
-        <button type="submit" class="btn btn-success"><i class="fas fa-list"></i> &nbsp;All List</button>
+        <a class="btn btn-success" href="/list"><i class="fas fa-list"></i> &nbsp;All List</a>
     </div>
 </form>
